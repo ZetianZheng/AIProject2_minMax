@@ -5,14 +5,9 @@ class ScoreBoard():
     def  __init__(self, m):
         # code_dict = code6.pkl, code8.pkl
         # score_dict = 6.pkl,8.pkl
-        if m == 6:
-            self.O_code_dict = self.load_code_dict('O_code_6.pkl')
-            self.X_code_dict = self.load_code_dict('X_code_6.pkl')
-            self.score_board = self.load_score_dict('6.pkl')
-        elif m == 8:
-            self.O_code_dict = self.load_code_dict('O_code_8.pkl')
-            self.X_code_dict = self.load_code_dict('X_code_8.pkl')
-            self.score_board = self.load_score_dict('8.pkl')
+        self.O_code_dict = self.load_code_dict('O_code_{}.pkl'.format(str(m)))
+        self.X_code_dict = self.load_code_dict('X_code_{}.pkl'.format(str(m)))
+        self.score_board = self.load_score_dict('{}.pkl'.format(str(m)))
 
     def load_code_dict(self, code_dict):
         with open (code_dict, 'rb') as f:
@@ -77,4 +72,4 @@ class ScoreBoard():
 
 
 
-        
+
