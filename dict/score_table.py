@@ -40,35 +40,6 @@ scores = {}
 d = [str(i) for i in range(8)]
 d
 
-for v0 in values:
-    state = v0
-    for v1 in values:
-        state += v1
-            for v2 in values:
-                state += v2
-                for v3 in values:
-                    state += v3
-                    for v4 in values:
-                        state += v4
-                            for v5 in values:
-                                state += v5
-                                for v6 in values:
-                                    state += v6
-                                    for v7 in values:
-                                        state += v7
-
-                                        score = 0
-                                        for i in range(0,16,2): 
-                                            pre = str(int(i//2))                       
-                                            s1 = pre + state[i:i+2]
-                                            for j in range(i+2,16,2):
-                                                pre = str(int(j//2))
-                                                s2 = pre + state[j:j+2]
-                                                combine_state = s1+s2
-                                                score += combine_scores[combine_state]
-
-                                        scores[state] = score
-
 
 pickle.dump(scores,open('scores_board_6_2.pkl', 'wb'))
     
